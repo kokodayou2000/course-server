@@ -43,6 +43,20 @@ public class DocController {
         return docService.queryAllDocById(id);
     }
 
+    /**
+     * 查询指定文档id的数据
+     * @param doc_Id 文档id
+     * @return 结果
+     */
+    @GetMapping("/getOneDocByDocID")
+    public AjaxResult getOneDocByUserIDAndDocID(
+            @RequestParam("id") String doc_Id
+    ){
+        return docService.getOneDocByDocID(doc_Id);
+    }
+
+
+
 
     /**
      * 插入数据

@@ -43,4 +43,11 @@ public interface IDocService {
      * @return
      */
     AjaxResult save(Doc doc);
+
+    /**
+     * 根据文档id找到指定文档
+     * @param userId 用户id
+     * @return ajax数据
+     */
+    AjaxResult getOneDocByDocID(String userId);
 }

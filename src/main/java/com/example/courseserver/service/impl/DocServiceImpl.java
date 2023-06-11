@@ -199,8 +199,21 @@ public class DocServiceImpl implements IDocService {
 
     @Override
     public AjaxResult save(Doc doc) {
-
         Doc save = docRepository.save(doc);
         return AjaxResult.success(save);
+    }
+
+    @Override
+    public AjaxResult getOneDocByDocID(String docId) {
+        if (docId == null){
+            return AjaxResult.error("数据不能为空");
+        }
+        Optional<Doc> byId = docRepository.findById(docId);
+        Doc doc = byId.get();
+        if (doc == null){
+            return AjaxResult.error("文档id错误");
+        }
+        log.info(doc.toString());
+        return AjaxResult.success(doc);
     }
 }
