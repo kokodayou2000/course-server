@@ -3,6 +3,7 @@ package com.example.courseserver.controller;
 import com.example.courseserver.domain.AjaxResult;
 import com.example.courseserver.entity.Doc;
 import com.example.courseserver.entity.vo.InsertVo;
+import com.example.courseserver.entity.vo.UpDateVO;
 import com.example.courseserver.service.IDocService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -69,9 +70,9 @@ public class DocController {
     }
 
     @PostMapping("/updateDoc")
-    public AjaxResult updateDoc(@RequestParam("id") String id,
-                              @RequestParam("content") String content){
-        return docService.updateDoc(id,content);
+    public AjaxResult updateDoc(
+            @RequestBody UpDateVO upDateVO){
+        return docService.updateDoc(upDateVO.getId(), upDateVO.getContent());
     }
 
     /**
