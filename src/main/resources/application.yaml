@@ -1,0 +1,14 @@
+spring:
+  data:
+    mongodb:
+#      uri: mongodb://localhost:27017/user
+      host: 127.0.0.1
+      port: 27017
+      database: user
+
+server:
+  port: 7777
+#
+#logging.level.org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+#logging.level.org.springframework.data.mongodb.core: DEBUG
+#logging.level.org.springframework.data.mongodb.repository: DEBUG
